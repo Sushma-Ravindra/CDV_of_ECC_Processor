@@ -14,7 +14,7 @@ interface ACUif;
     cp_xp: coverpoint xp;
     cp_yp: coverpoint yp;
     cp_xq: coverpoint xq;
-    //ycp_yq: coverpoint yq;
+    ycp_yq: coverpoint yq;
     cp_axcp_b:cross a,b;
  	cp_xpxcp_yp:cross xp,yp;
   endgroup
