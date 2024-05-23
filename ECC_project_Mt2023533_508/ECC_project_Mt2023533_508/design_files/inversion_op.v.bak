@@ -1,0 +1,21 @@
+module inversion_op(
+
+input clk,
+input [162:0] inv_inp,
+output [162:0] inv_out
+
+);
+
+
+
+	wire [162:0]temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8,temp9,temp_cls;
+	
+	wire [162:0] temp2_2,temp2_3,temp7_2,temp9_2,temp_cls_2,temp_cls_3,temp_cls_4,temp_cls_5,temp_cls_6;
+	
+	
+	multiplier_163b m1(.mult_out(temp1),.mult_in1(inv_inp),.mult_in2(inv_inp));
+	multiplier_163b m2(.mult_out(temp2),.mult_in1(inv_inp),.mult_in2(temp1));
+	circ_leftshift_163b cls1(.circ_shft_out(temp_cls),.circ_shft_inp(temp1),.circ_shft_val(7'b0000010));
+	assign inv_out = temp_cls;
+	
+	endmodule
